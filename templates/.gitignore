@@ -1,0 +1,18 @@
+# virtual env
+env/
+venv/
+ENV/
+
+database
+db.sqlite3
+
+# py bytecode
+*.pyc
+__pycache__/
+
+
+.env
+
+
+# logs
+*.log

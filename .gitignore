@@ -1,0 +1,19 @@
+# virtual env
+env/
+venv/
+ENV/
+
+# database
+db.sqlite3
+
+
+*.pyc
+__pycache__/
+
+.vscode/
+
+#env variable
+.env
+
+# logs
+*.log

@@ -1,0 +1,1125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeweave - AI-Powered Project Development Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-brain logo-icon"></i>
+                Code<span>W</span>eave
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li class="active"><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <a href="register.html" class="btn btn-primary">Get Started</a>
+                    <div class="header-buttons">
+                        <div class="theme-toggle" id="theme-toggle">
+                            <i class="fas fa-moon"></i>
+                            <div class="theme-menu">
+                                <div class="theme-option active" data-theme="dark">
+                                    <div class="theme-color dark"></div>
+                                    <span>Dark Theme</span>
+                                </div>
+                                <div class="theme-option" data-theme="light">
+                                    <div class="theme-color light"></div>
+                                    <span>Light Theme</span>
+                                </div>
+                                <div class="theme-option" data-theme="ocean">
+                                    <div class="theme-color ocean"></div>
+                                    <span>Ocean Theme</span>
+                                </div>
+                                <div class="theme-option" data-theme="nature">
+                                    <div class="theme-color nature"></div>
+                                    <span>Nature Theme</span>
+                                </div>
+                                <div class="theme-option" data-theme="cosmic">
+                                    <i class="fas fa-star"></i> Cosmic
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </ul>
+                
+                <div class="hamburger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- hero section -->
+    <section id="home" class="hero">
+        <div class="particles" id="particles"></div>
+        <div class="glow"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">AI-Powered Development</div>
+                <h1>Codeweave — <span class="highlight">AI-Powered</span> Project Development & Code Merging</h1>
+                <p>Seamlessly create, structure, and deploy projects with AI assistance. Transform your development workflow with intelligent code generation.</p>
+                <div class="hero-buttons">
+                    <a href="register.html" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Get Started
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-play"></i>
+                        See Live Demo
+                    </a>
+                </div>
+                <div class="terminal">
+                    <div class="terminal-content">
+                        <div class="terminal-line" style="--i: 1">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-text">pip install codeweave</span>
+                        </div>
+                        <div class="terminal-line" style="--i: 2">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-text">codeweave init</span>
+                        </div>
+                        <div class="terminal-line" style="--i: 3">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-text">codeweave generate project</span>
+                        </div>
+                        <div class="terminal-line" style="--i: 4">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-text">Starting AI analysis...</span>
+                        </div>
+                        <div class="terminal-line" style="--i: 5">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-text">Project structure generated!</span>
+                        </div>
+                        <div class="terminal-line" style="--i: 6">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-text">Coding modules...</span>
+                            <span class="terminal-cursor"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-3d">
+            <div class="cube">
+                <div class="cube-face"><i class="fas fa-code"></i></div>
+                <div class="cube-face"><i class="fas fa-brain"></i></div>
+                <div class="cube-face"><i class="fas fa-sitemap"></i></div>
+                <div class="cube-face"><i class="fas fa-rocket"></i></div>
+                <div class="cube-face"><i class="fas fa-cogs"></i></div>
+                <div class="cube-face"><i class="fas fa-project-diagram"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- features -->
+    <section id="features" class="features">
+        <div class="features-bg"></div>
+        <div class="container">
+            <div class="section-title">
+                <span class="section-subtitle">Core Capabilities</span>
+                <h2>Powerful AI Features</h2>
+                <p>Unlock your coding potential with Codeweave's intelligent tools designed to streamline your development workflow.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card glass-card">
+                    
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-sitemap feature-icon"></i>
+                    </div>
+                    <h3>AI-Powered Roadmap Generator</h3>
+                    <p>Let our AI analyze your project requirements and generate a comprehensive development roadmap with milestones and tasks.</p>
+                    <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-code feature-icon"></i>
+                    </div>
+                    <h3>Modular Code Writing Assistance</h3>
+                    <p>Get intelligent code suggestions and complete modules written for you based on your project specifications.</p>
+                    <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-rocket feature-icon"></i>
+                    </div>
+                    <h3>Intelligent Code Merging & Deployment</h3>
+                    <p>Seamlessly merge code modules and deploy your project with automated optimization and error checking.</p>
+                    <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-bug feature-icon"></i>
+                    </div>
+                    <h3>Automated Testing & Debugging</h3>
+                    <p>Identify and fix bugs before they become problems with AI-powered testing and debugging tools.</p>
+                    <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-sync feature-icon"></i>
+                    </div>
+                    <h3>Continuous Integration</h3>
+                    <p>Seamlessly integrate with your existing CI/CD pipelines for smooth development workflows.</p>
+                    <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-shield-alt feature-icon"></i>
+                    </div>
+                    <h3>Security Analysis</h3>
+                    <p>Scan your code for vulnerabilities and receive recommendations for security improvements.</p>
+                    <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- advanced features -->
+    <section class="advanced-features">
+        <div class="container">
+            <div class="advanced-features-grid">
+                <div class="advanced-features-content">
+                    <span class="section-subtitle">Next-Level Development</span>
+                    <h2>Advanced AI Capabilities</h2>
+                    <p>Codeweave goes beyond basic code generation to provide a complete development ecosystem powered by cutting-edge AI.</p>
+                    <ul class="advanced-features-list">
+                        <li class="advanced-features-item">
+                            <div class="advanced-features-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="advanced-features-text">
+                                <h4>Natural Language Processing</h4>
+                                <p>Describe your project in plain English and watch as our AI translates your requirements into code.</p>
+                            </div>
+                        </li>
+                        <li class="advanced-features-item">
+                            <div class="advanced-features-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="advanced-features-text">
+                                <h4>Intelligent Architecture Design</h4>
+                                <p>Get recommendations for optimal project structure based on your specific requirements and industry best practices.</p>
+                            </div>
+                        </li>
+                        <li class="advanced-features-item">
+                            <div class="advanced-features-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="advanced-features-text">
+                                <h4>Performance Optimization</h4>
+                                <p>Automatically identify and resolve performance bottlenecks in your code for maximum efficiency.</p>
+                            </div>
+                        </li>
+                        <li class="advanced-features-item">
+                            <div class="advanced-features-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="advanced-features-text">
+                                <h4>Collaborative Development</h4>
+                                <p>Work seamlessly with your team with real-time collaboration features and intelligent merge conflict resolution.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="advanced-features-image">
+                    <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Advanced AI Features" class="advanced-features-img">
+                    <div class="advanced-features-badge">
+                        <i class="fas fa-robot"></i> AI-Powered
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- how it works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-subtitle">Simple Process</span>
+                <h2>How It Works</h2>
+                <p>Follow these simple steps to transform your idea into a fully functional project with Codeweave's AI assistance.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-badge">1</div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3>Enter Project Details</h3>
+                        <p>Describe your project requirements, technologies, and goals in natural language. Our AI understands your needs just like a human developer would.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-badge">2</div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-icon"><i class="fas fa-sitemap"></i></div>
+                        <h3>AI Generates Roadmap</h3>
+                        <p>Our AI analyzes your requirements and creates a detailed development roadmap with all necessary components, dependencies, and milestones.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-badge">3</div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-icon"><i class="fas fa-code"></i></div>
+                        <h3>Modular Coding</h3>
+                        <p>AI assists in writing code modules or generates them entirely based on your specifications, following best practices and design patterns.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-badge">4</div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-icon"><i class="fas fa-rocket"></i></div>
+                        <h3>AI Deployment & Optimization</h3>
+                        <p>Codeweave merges all modules, optimizes the codebase for performance, and deploys your project to your preferred platform with minimal configuration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- code playground -->
+    <section class="code-playground">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-subtitle">Try It Out</span>
+                <h2>Interactive Code Playground</h2>
+                <p>Experience the power of Codeweave with our interactive demo.</p>
+            </div>
+            <div class="playground-container glass-card">
+                <div class="playground-tabs">
+                    <div class="playground-tab active" data-tab="input">Input</div>
+                    <div class="playground-tab" data-tab="output">Output</div>
+                    <div class="playground-tab" data-tab="code">Generated Code</div>
+                </div>
+                <div class="playground-content">
+                    <div class="playground-panel active" id="input-panel">
+                        <div class="playground-header">
+                            <h3>Describe Your Project</h3>
+                            <p>Enter a description of what you want to build, and our AI will generate a project structure.</p>
+                        </div>
+                        <div class="playground-editor">
+                            <textarea class="playground-textarea" placeholder="Example: Create a React dashboard with user authentication, dark/light theme toggle, and a chart component to display sales data."></textarea>
+                            <div class="playground-controls">
+                                <button class="btn btn-primary generate-btn">
+                                    <i class="fas fa-magic"></i> Generate
+                                </button>
+                                <div class="playground-examples">
+                                    <span>Examples:</span>
+                                    <button class="example-btn">Todo App</button>
+                                    <button class="example-btn">Landing Page</button>
+                                    <button class="example-btn">API Client</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playground-panel" id="output-panel">
+                        <div class="playground-header">
+                            <h3>Project Structure</h3>
+                            <p>Here's the recommended project structure based on your description.</p>
+                        </div>
+                        <div class="playground-output">
+                            <div class="file-tree">
+                                <div class="file-tree-item folder">
+                                    <i class="fas fa-folder"></i> src
+                                    <div class="file-tree-children">
+                                        <div class="file-tree-item folder">
+                                            <i class="fas fa-folder"></i> components
+                                            <div class="file-tree-children">
+                                                <div class="file-tree-item file"><i class="fas fa-file-code"></i> Dashboard.jsx</div>
+                                                <div class="file-tree-item file"><i class="fas fa-file-code"></i> Navbar.jsx</div>
+                                                <div class="file-tree-item file"><i class="fas fa-file-code"></i> SalesChart.jsx</div>
+                                                <div class="file-tree-item file"><i class="fas fa-file-code"></i> ThemeToggle.jsx</div>
+                                            </div>
+                                        </div>
+                                        <div class="file-tree-item folder">
+                                            <i class="fas fa-folder"></i> pages
+                                            <div class="file-tree-children">
+                                                <div class="file-tree-item file"><i class="fas fa-file-code"></i> Home.jsx</div>
+                                                <div class="file-tree-item file"><i class="fas fa-file-code"></i> Login.jsx</div>
+                                                <div class="file-tree-item file"><i class="fas fa-file-code"></i> Register.jsx</div>
+                                            </div>
+                                        </div>
+                                        <div class="file-tree-item folder">
+                                            <i class="fas fa-folder"></i> context
+                                            <div class="file-tree-children">
+                                                <div class="file-tree-item file"><i class="fas fa-file-code"></i> AuthContext.jsx</div>
+                                                <div class="file-tree-item file"><i class="fas fa-file-code"></i> ThemeContext.jsx</div>
+                                            </div>
+                                        </div>
+                                        <div class="file-tree-item folder">
+                                            <i class="fas fa-folder"></i> api
+                                            <div class="file-tree-children">
+                                                <div class="file-tree-item file"><i class="fas fa-file-code"></i> salesData.js</div>
+                                                <div class="file-tree-item file"><i class="fas fa-file-code"></i> auth.js</div>
+                                            </div>
+                                        </div>
+                                        <div class="file-tree-item file"><i class="fas fa-file-code"></i> App.jsx</div>
+                                        <div class="file-tree-item file"><i class="fas fa-file-code"></i> index.js</div>
+                                    </div>
+                                </div>
+                                <div class="file-tree-item file"><i class="fas fa-file"></i> package.json</div>
+                                <div class="file-tree-item file"><i class="fas fa-file"></i> README.md</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playground-panel" id="code-panel">
+                        <div class="playground-header">
+                            <h3>Generated Code</h3>
+                            <p>Here's a sample of the generated code for key components.</p>
+                        </div>
+                        <div class="playground-code">
+                            <div class="code-tabs">
+                                <div class="code-tab active" data-file="Dashboard.jsx">Dashboard.jsx</div>
+                                <div class="code-tab" data-file="ThemeToggle.jsx">ThemeToggle.jsx</div>
+                                <div class="code-tab" data-file="SalesChart.jsx">SalesChart.jsx</div>
+                            </div>
+                            <div class="code-content">
+                                <pre><code class="language-jsx">import React, { useContext, useEffect, useState } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
+import { AuthContext } from '../context/AuthContext';
+import Navbar from './Navbar';
+import SalesChart from './SalesChart';
+import { fetchSalesData } from '../api/salesData';
+
+const Dashboard = () => {
+  const { theme } = useContext(ThemeContext);
+  const { user } = useContext(AuthContext);
+  const [salesData, setSalesData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const data = await fetchSalesData(user.id);
+        setSalesData(data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error loading sales data:', error);
+        setLoading(false);
+      }
+    };
+
+    loadData();
+  }, [user.id]);
+
+  return (
+    <div className={`dashboard ${theme}`}>
+      <Navbar />
+      <div className="dashboard-content">
+        <h1>Welcome back, {user.name}</h1>
+        <div className="dashboard-summary">
+          <div className="summary-card">
+            <h3>Total Sales</h3>
+            <p className="summary-value">$24,500</p>
+          </div>
+          <div className="summary-card">
+            <h3>New Customers</h3>
+            <p className="summary-value">124</p>
+          </div>
+          <div className="summary-card">
+            <h3>Growth</h3>
+            <p className="summary-value">+12.5%</p>
+          </div>
+        </div>
+        {loading ? (
+          <p>Loading chart data...</p>
+        ) : (
+          <SalesChart data={salesData} />
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Dashboard;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- roadmap-->
+    <section class="roadmap">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-subtitle">Future Plans</span>
+                <h2>Product Roadmap</h2>
+                <p>See what's coming next in Codeweave's development journey.</p>
+            </div>
+            <div class="roadmap-timeline">
+                <div class="roadmap-line"></div>
+                <div class="roadmap-item active">
+                    <div class="roadmap-dot"></div>
+                    <div class="roadmap-date">Q1 2025</div>
+                    <div class="roadmap-content glass-card">
+                        <h3>Core Platform Launch</h3>
+                        <ul class="roadmap-features">
+                            <li><i class="fas fa-check"></i> AI Roadmap Generator</li>
+                            <li><i class="fas fa-check"></i> Basic Code Generation</li>
+                            <li><i class="fas fa-check"></i> Project Structure Creation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="roadmap-item active">
+                    <div class="roadmap-dot"></div>
+                    <div class="roadmap-date">Q2 2025</div>
+                    <div class="roadmap-content glass-card">
+                        <h3>Advanced Code Features</h3>
+                        <ul class="roadmap-features">
+                            <li><i class="fas fa-check"></i> Intelligent Code Merging</li>
+                            <li><i class="fas fa-check"></i> Automated Testing</li>
+                            <li><i class="fas fa-check"></i> Performance Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="roadmap-item current">
+                    <div class="roadmap-dot"></div>
+                    <div class="roadmap-date">Q3 2025</div>
+                    <div class="roadmap-content glass-card">
+                        <h3>Collaboration Tools</h3>
+                        <ul class="roadmap-features">
+                            <li><i class="fas fa-spinner fa-spin"></i> Team Workspaces</li>
+                            <li><i class="fas fa-spinner fa-spin"></i> Real-time Collaboration</li>
+                            <li><i class="fas fa-spinner fa-spin"></i> Version Control Integration</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-dot"></div>
+                    <div class="roadmap-date">Q4 2025</div>
+                    <div class="roadmap-content glass-card">
+                        <h3>Enterprise Features</h3>
+                        <ul class="roadmap-features">
+                            <li>Advanced Security Controls</li>
+                            <li>Custom Integrations API</li>
+                            <li>Compliance Reporting</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-dot"></div>
+                    <div class="roadmap-date">Q5 2025</div>
+                    <div class="roadmap-content glass-card">
+                        <h3>AI Enhancements</h3>
+                        <ul class="roadmap-features">
+                            <li>Advanced Language Models</li>
+                            <li>Custom Training Options</li>
+                            <li>Domain-Specific Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- reviews-->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-subtitle">Success Stories</span>
+                <h2>What Our Users Say</h2>
+                <p>Hear from developers who have transformed their workflow with Codeweave.</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonials-track">
+                    <div class="testimonial">
+                        <div class="testimonial-image">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-quote">
+                            Codeweave has completely transformed how I approach new projects. What used to take weeks now takes days, and the code quality is consistently excellent. The AI roadmap generator is like having a senior architect on your team 24/7.
+                        </div>
+                        <div class="testimonial-author">Michael Chen</div>
+                        <div class="testimonial-role">Senior Developer at TechCorp</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-image">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-quote">
+                            As a startup founder, Codeweave has been a game-changer. We've reduced development time by 60% and can iterate much faster on new features. This has allowed us to respond to market feedback quickly and stay ahead of competitors.
+                        </div>
+                        <div class="testimonial-author">Sarah Johnson</div>
+                        <div class="testimonial-role">Founder, InnovateTech</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-image">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="User">
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="testimonial-quote">
+                            The AI roadmap generator alone is worth the price. It's like having a senior architect planning your project, but available 24/7. I've been able to take on more clients and deliver higher quality work in less time.
+                        </div>
+                        <div class="testimonial-author">David Rodriguez</div>
+                        <div class="testimonial-role">Freelance Developer</div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <div class="testimonial-arrow prev-testimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="testimonial-arrow next-testimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div class="testimonial-dots">
+                    <div class="testimonial-dot active"></div>
+                    <div class="testimonial-dot"></div>
+                    <div class="testimonial-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- pricing -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-subtitle">Flexible Plans</span>
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Choose the plan that fits your development needs with no hidden fees or surprises.</p>
+            </div>
+            <div class="pricing-toggle">
+                <div class="pricing-toggle-text active">Monthly</div>
+                <div class="pricing-toggle-switch"></div>
+                <div class="pricing-toggle-text">Yearly</div>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card glass-card">
+                    <div class="pricing-save">Save 20%</div>
+                    <div class="pricing-header">
+                        <div class="pricing-name">Basic</div>
+                        <div class="pricing-price monthly">500</div>
+                        <div class="pricing-price yearly" style="display: none;">400</div>
+                        <div class="pricing-duration">per month</div>
+                    </div>
+                    <div class="pricing-description">
+                        Perfect for individual developers and small projects.
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> AI Roadmap Generation</li>
+                        <li><i class="fas fa-check"></i> Basic Code Assistance</li>
+                        <li><i class="fas fa-check"></i> 3 Projects</li>
+                        <li><i class="fas fa-check"></i> Community Support</li>
+                        <li><i class="fas fa-times"></i> Advanced Deployment</li>
+                        <li><i class="fas fa-times"></i> Priority Support</li>
+                        <li><i class="fas fa-times"></i> Custom Integrations</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                </div>
+                <div class="pricing-card glass-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-save">Save 25%</div>
+                    <div class="pricing-header">
+                        <div class="pricing-name">Professional</div>
+                        <div class="pricing-price monthly">1000</div>
+                        <div class="pricing-price yearly" style="display: none;">850</div>
+                        <div class="pricing-duration">per month</div>
+                    </div>
+                    <div class="pricing-description">
+                        Ideal for professional developers and growing teams.
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> AI Roadmap Generation</li>
+                        <li><i class="fas fa-check"></i> Advanced Code Assistance</li>
+                        <li><i class="fas fa-check"></i> 10 Projects</li>
+                        <li><i class="fas fa-check"></i> Email Support</li>
+                        <li><i class="fas fa-check"></i> Advanced Deployment</li>
+                        <li><i class="fas fa-times"></i> Priority Support</li>
+                        <li><i class="fas fa-times"></i> Custom Integrations</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                </div>
+                <div class="pricing-card glass-card">
+                    <div class="pricing-save">Save 30%</div>
+                    <div class="pricing-header">
+                        <div class="pricing-name">Enterprise</div>
+                        <div class="pricing-price monthly">1500</div>
+                        <div class="pricing-price yearly" style="display: none;">1300</div>
+                        <div class="pricing-duration">per month</div>
+                    </div>
+                    <div class="pricing-description">
+                        For teams and businesses with advanced needs.
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> AI Roadmap Generation</li>
+                        <li><i class="fas fa-check"></i> Advanced Code Assistance</li>
+                        <li><i class="fas fa-check"></i> Unlimited Projects</li>
+                        <li><i class="fas fa-check"></i> 24/7 Support</li>
+                        <li><i class="fas fa-check"></i> Advanced Deployment</li>
+                        <li><i class="fas fa-check"></i> Priority Support</li>
+                        <li><i class="fas fa-check"></i> Custom Integrations</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+
+            <!-- plans table -->
+            <div class="comparison">
+                <div class="section-title">
+                    <h2>Feature Comparison</h2>
+                    <p>See how our plans stack up against each other.</p>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Basic</th>
+                            <th>Professional</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AI Roadmap Generation</td>
+                            <td><i class="fas fa-check comparison-check"></i></td>
+                            <td><i class="fas fa-check comparison-check"></i></td>
+                            <td><i class="fas fa-check comparison-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Code Assistance</td>
+                            <td>Basic</td>
+                            <td>Advanced</td>
+                            <td>Advanced+</td>
+                        </tr>
+                        <tr>
+                            <td>Projects</td>
+                            <td>3</td>
+                            <td>10</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td>Deployment Options</td>
+                            <td>Basic</td>
+                            <td>Advanced</td>
+                            <td>Custom</td>
+                        </tr>
+                        <tr>
+                            <td>Support</td>
+                            <td>Community</td>
+                            <td>Email</td>
+                            <td>24/7 Priority</td>
+                        </tr>
+                        <tr>
+                            <td>API Access</td>
+                            <td><i class="fas fa-times comparison-times"></i></td>
+                            <td><i class="fas fa-check comparison-check"></i></td>
+                            <td><i class="fas fa-check comparison-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Custom Integrations</td>
+                            <td><i class="fas fa-times comparison-times"></i></td>
+                            <td><i class="fas fa-times comparison-times"></i></td>
+                            <td><i class="fas fa-check comparison-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Team Collaboration</td>
+                            <td><i class="fas fa-times comparison-times"></i></td>
+                            <td>Up to 5 users</td>
+                            <td>Unlimited</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+  
+
+    <!-- integrations -->
+    <section class="integrations">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-subtitle">Seamless Connections</span>
+                <h2>Integrations & Compatibility</h2>
+                <p>Codeweave works with your favorite tools and platforms.</p>
+            </div>
+            <div class="integrations-grid">
+                <div class="integration-card glass-card">
+                    <div class="integration-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>Seamlessly connect your GitHub repositories for version control and collaboration.</p>
+                </div>
+                
+                <div class="integration-card glass-card">
+                    <div class="integration-icon">
+                        <i class="fab fa-jira"></i>
+                    </div>
+                    <h3>Jira</h3>
+                    <p>Sync with Jira for seamless project management and issue tracking.</p>
+                </div>
+               
+                <div class="integration-card glass-card">
+                    <div class="integration-icon">
+                        <i class="fab fa-docker"></i>
+                    </div>
+                    <h3>Docker</h3>
+                    <p>Generate Docker configurations for containerized applications.</p>
+                </div>
+                <div class="integration-card glass-card">
+                    <div class="integration-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>StackBlitz</h3>
+                    <p>Integrate with Stack Blitz for instant, shareable project environments.</p>
+                </div>
+            </div>
+            <div class="integrations-more">
+                <p>And many more integrations available...</p>
+                <a href="#" class="btn btn-secondary">View All Integrations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- pricing calculator -->
+    <section class="pricing-calculator">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-subtitle">Custom Pricing</span>
+                <h2>Calculate Your Savings</h2>
+                <p>See how much time and money you can save with Codeweave.</p>
+            </div>
+            <div class="calculator-container glass-card">
+                <div class="calculator-form">
+                    <div class="calculator-row">
+                        <div class="calculator-field">
+                            <label>Number of Developers</label>
+                            <div class="range-slider-container">
+                                <input type="range" min="1" max="50" value="5" class="range-slider" id="dev-count">
+                                <div class="range-value"><span id="dev-count-value">5</span> developers</div>
+                            </div>
+                        </div>
+                        <div class="calculator-field">
+                            <label>Average Developer Salary</label>
+                            <div class="range-slider-container">
+                                <input type="range" min="50000" max="200000" step="10000" value="100000" class="range-slider" id="dev-salary">
+                                <div class="range-value">$<span id="dev-salary-value">100,000</span>/year</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calculator-row">
+                        <div class="calculator-field">
+                            <label>Projects Per Month</label>
+                            <div class="range-slider-container">
+                                <input type="range" min="1" max="20" value="3" class="range-slider" id="project-count">
+                                <div class="range-value"><span id="project-count-value">3</span> projects</div>
+                            </div>
+                        </div>
+                        <div class="calculator-field">
+                            <label>Average Project Duration (weeks)</label>
+                            <div class="range-slider-container">
+                                <input type="range" min="1" max="52" value="8" class="range-slider" id="project-duration">
+                                <div class="range-value"><span id="project-duration-value">8</span> weeks</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calculator-row">
+                        <div class="calculator-field">
+                            <label>Estimated Productivity Increase</label>
+                            <div class="range-slider-container">
+                                <input type="range" min="10" max="70" value="40" class="range-slider" id="productivity">
+                                <div class="range-value"><span id="productivity-value">40</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator-results">
+                    <div class="calculator-result-card">
+                        <div class="result-value">$<span id="monthly-savings">16,667</span></div>
+                        <div class="result-label">Monthly Savings</div>
+                    </div>
+                    <div class="calculator-result-card">
+                        <div class="result-value">$<span id="annual-savings">200,000</span></div>
+                        <div class="result-label">Annual Savings</div>
+                    </div>
+                    <div class="calculator-result-card">
+                        <div class="result-value"><span id="time-saved">3.2</span> weeks</div>
+                        <div class="result-label">Time Saved Per Project</div>
+                    </div>
+                    <div class="calculator-result-card">
+                        <div class="result-value"><span id="roi">733</span>%</div>
+                        <div class="result-label">ROI</div>
+                    </div>
+                </div>
+                <div class="calculator-cta">
+                    <p>These calculations are estimates based on industry averages. Contact us for a detailed analysis specific to your organization.</p>
+                    <a href="#" class="btn btn-primary">Get Custom Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- cta -->
+    <section class="cta">
+        <div class="cta-bg"></div>
+        <div class="cta-shape"></div>
+        <div class="cta-shape"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Development Process?</h2>
+                <p>Join thousands of developers who are building better software faster with Codeweave's AI-powered platform.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Get Started Free
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-calendar"></i>
+                        Schedule a Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- newsletter -->
+    <section id="newsletter" class="newsletter-section">
+        <div class="container">
+            <div class="newsletter glass-card">
+                <div class="newsletter-bg"></div>
+                <span class="section-subtitle">Stay Updated</span>
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get the latest updates, tips, and exclusive offers delivered directly to your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email address">
+                    <button type="submit" class="newsletter-button">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2>Contact Us</h2>
+                <p>Have questions or need help? Reach out to our team.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>We'd Love to Hear From You</h2>
+                    <p>Whether you have a question about features, pricing, or need a demo, our team is ready to answer all your questions.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Our Location</h4>
+                                <p>Dronacharya College of Engineering, Gurugram ,Haryana    </p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone Number</h4>
+                                <p>+91 7701987077</p>
+                                <p>+91 9871586017</p>
+                                <p>+91 8800945736</p>
+                                <p>+91 7248324329</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email Address</h4>
+                                <p>info@codeweave.ai</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="#" class="contact-social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="contact-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="contact-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="contact-social-icon"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" class="form-control" placeholder="Enter subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" class="form-control" placeholder="Enter your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <div class="footer-bg"></div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">
+                        <i class="fas fa-brain logo-icon"></i>
+                        Code<span>W</span>eave
+                    </a>
+                    <p>Codeweave is an AI-powered platform that helps developers generate, structure, write, and deploy projects with ease. Our mission is to make development more efficient and enjoyable.</p>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#features"><i class="fas fa-chevron-right"></i> Features</a></li>
+                        <li><a href="#how-it-works"><i class="fas fa-chevron-right"></i> How It Works</a></li>
+                        <li><a href="#pricing"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+                        <li><a href="#blog"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Documentation</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> API Reference</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Tutorials</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Case Studies</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Community</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i>Dronacharya College of Engineering, Gurugram , Haryana  </p>
+                    <p><i class="fas fa-phone"></i> +91 7701987077</p>
+                    <p><i class="fas fa-envelope"></i>codeweave.info@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 Codeweave. All rights reserved.</p>
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- live chat widget -->
+    <div class="chat-widget">
+        <div class="chat-button">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-popup">
+            <div class="chat-header">
+                <h3>Chat with us</h3>
+                <div class="chat-close"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="chat-messages">
+                <div class="chat-message bot">
+                    <div class="chat-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="chat-bubble">
+                        <p>Hi there! 👋 How can we help you today?</p>
+                    </div>
+                </div>
+                <div class="chat-message bot">
+                    <div class="chat-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="chat-bubble">
+                        <p>I can answer questions about Codeweave, help you choose the right plan, or connect you with our team.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message...">
+                <button><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- cookie consent banner -->
+    <div class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-icon">
+                <i class="fas fa-cookie-bite"></i>
+            </div>
+            <div class="cookie-text">
+                <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="btn btn-outline btn-sm cookie-settings">Cookie Settings</button>
+                <button class="btn btn-primary btn-sm cookie-accept">Accept All</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- back to top -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="{% static 'home.js' %}"></script>
+</body>
+</html>
