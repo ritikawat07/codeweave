@@ -6,7 +6,7 @@ def app(request):
     return render(request, 'app.html')
 
 def devenv(request):
-    phase_id = request.GET.get('phase', '1') 
+    phase_id = request.GET.get('phase', '1')  
     return render(request, 'devenv.html', {'phase_id': phase_id})
 
 from django.http import JsonResponse
@@ -35,7 +35,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# cache initialize
+# Initialize cache
 roadmap_cache = {}
 
 DJANGO_API_URL = "http://127.0.0.1:8000/projects/save_project/"

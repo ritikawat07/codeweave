@@ -1012,8 +1012,71 @@ footer {
             });
             
             // PDF export - use a library like jsPDF
-            document.getElementById('exportPDF').addEventListener('click', function() {
-                alert('PDF export would be implemented here with a library like jsPDF');
+            document.getElementById('exportPDF').addEventListener('click', async function() {
+                if (!window.roadmapData) {
+                    alert('No roadmap data available to export');
+                    return;
+                }
+
+                // Show loading state
+                const exportButton = this;
+                const originalText = exportButton.innerHTML;
+                exportButton.innerHTML = '<i class="bi bi-hourglass-split"></i> Generating PDF...';
+                exportButton.disabled = true;
+
+                try {
+                    // Get the current page content
+                    const content = document.getElementById('roadmapContent').innerHTML;
+                    
+                    // Prepare the request payload
+                    const payload = {
+                        content: content,
+                        title: window.roadmapData.project_overview.name || 'Project Roadmap',
+                        options: {
+                            format: 'A4',
+                            margin: '20mm',
+                            printBackground: true
+                        }
+                    };
+
+                    // Use a different CORS proxy
+                    const proxyUrl = 'https://api.allorigins.win/raw?url=';
+                    const targetUrl = encodeURIComponent('https://api.market/store/yakpdf/pdf');
+                    
+                    const response = await fetch(proxyUrl + targetUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    // Get the PDF blob
+                    const pdfBlob = await response.blob();
+                    
+                    // Create download link
+                    const url = window.URL.createObjectURL(pdfBlob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `${window.roadmapData.project_overview.name.replace(/\s+/g, '_')}_roadmap.pdf`;
+                    document.body.appendChild(a);
+                    a.click();
+                    
+                    // Cleanup
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                } catch (error) {
+                    console.error('PDF generation error:', error);
+                    alert('Failed to generate PDF. Please try again later. Error: ' + error.message);
+                } finally {
+                    // Reset button state
+                    exportButton.innerHTML = originalText;
+                    exportButton.disabled = false;
+                }
             });
         });
         
