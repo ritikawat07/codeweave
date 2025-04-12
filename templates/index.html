@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'home.css' %}">
 </head>
 <body>
-    <!-- header -->
+    <!-- Header -->
     <header>
         <div class="container header-container">
             <a href="#" class="logo">
@@ -26,32 +26,9 @@
                     <li><a href="#contact">Contact</a></li>
                     <a href="{% url 'register' %}" class="btn btn-primary">Get Started</a>
                     <div class="header-buttons">
-                        <div class="theme-toggle" id="theme-toggle">
-                            <i class="fas fa-moon"></i>
-                            <div class="theme-menu">
-                                <div class="theme-option active" data-theme="dark">
-                                    <div class="theme-color dark"></div>
-                                    <span>Dark Theme</span>
-                                </div>
-                                <div class="theme-option" data-theme="light">
-                                    <div class="theme-color light"></div>
-                                    <span>Light Theme</span>
-                                </div>
-                                <div class="theme-option" data-theme="ocean">
-                                    <div class="theme-color ocean"></div>
-                                    <span>Ocean Theme</span>
-                                </div>
-                                <div class="theme-option" data-theme="nature">
-                                    <div class="theme-color nature"></div>
-                                    <span>Nature Theme</span>
-                                </div>
-                                <div class="theme-option" data-theme="cosmic">
-                                    <i class="fas fa-star"></i> Cosmic
-                                </div>
-                            </div>
-                        </div>
+                        
                        
-                    </div>
+                    
                 </ul>
                 
                 <div class="hamburger">
@@ -63,7 +40,7 @@
         </div>
     </header>
 
-    <!-- hero section -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="particles" id="particles"></div>
         <div class="glow"></div>
@@ -125,7 +102,7 @@
         </div>
     </section>
 
-    <!-- features -->
+    <!-- Features Section -->
     <section id="features" class="features">
         <div class="features-bg"></div>
         <div class="container">
@@ -188,7 +165,7 @@
         </div>
     </section>
 
-    <!-- advanced features -->
+    <!-- Advanced Features Section -->
     <section class="advanced-features">
         <div class="container">
             <div class="advanced-features-grid">
@@ -245,7 +222,7 @@
         </div>
     </section>
 
-    <!-- how it works -->
+    <!-- How It Works Section -->
     <section id="how-it-works" class="how-it-works">
         <div class="container">
             <div class="section-title">
@@ -253,44 +230,44 @@
                 <h2>How It Works</h2>
                 <p>Follow these simple steps to transform your idea into a fully functional project with Codeweave's AI assistance.</p>
             </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-badge">1</div>
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-icon"><i class="fas fa-lightbulb"></i></div>
-                        <h3>Enter Project Details</h3>
-                        <p>Describe your project requirements, technologies, and goals in natural language. Our AI understands your needs just like a human developer would.</p>
+            <div class="how-it-works-grid">
+                <div class="how-it-works-item">
+                    <div class="how-it-works-number">1</div>
+                    <div class="how-it-works-content">
+                        <div class="how-it-works-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3>Describe Your Idea</h3>
+                        <p>Simply describe what you want to build in natural language. No technical jargon needed.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-badge">2</div>
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-icon"><i class="fas fa-sitemap"></i></div>
-                        <h3>AI Generates Roadmap</h3>
-                        <p>Our AI analyzes your requirements and creates a detailed development roadmap with all necessary components, dependencies, and milestones.</p>
+                <div class="how-it-works-item">
+                    <div class="how-it-works-number">2</div>
+                    <div class="how-it-works-content">
+                        <div class="how-it-works-icon"><i class="fas fa-brain"></i></div>
+                        <h3>AI Analysis</h3>
+                        <p>Our AI analyzes your requirements and creates a detailed development plan.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-badge">3</div>
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-icon"><i class="fas fa-code"></i></div>
-                        <h3>Modular Coding</h3>
-                        <p>AI assists in writing code modules or generates them entirely based on your specifications, following best practices and design patterns.</p>
+                <div class="how-it-works-item">
+                    <div class="how-it-works-number">3</div>
+                    <div class="how-it-works-content">
+                        <div class="how-it-works-icon"><i class="fas fa-code"></i></div>
+                        <h3>Code Development</h3>
+                        <p>Get fully functional code development instantly, following best practices.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-badge">4</div>
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-icon"><i class="fas fa-rocket"></i></div>
-                        <h3>AI Deployment & Optimization</h3>
-                        <p>Codeweave merges all modules, optimizes the codebase for performance, and deploys your project to your preferred platform with minimal configuration.</p>
+                <div class="how-it-works-item">
+                    <div class="how-it-works-number">4</div>
+                    <div class="how-it-works-content">
+                        <div class="how-it-works-icon"><i class="fas fa-rocket"></i></div>
+                        <h3>Deploy & Optimize</h3>
+                        <p>Deploy your project with optimized performance and scalability.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- code playground -->
+    <!-- Code Playground Section -->
     <section class="code-playground">
         <div class="container">
             <div class="section-title">
@@ -453,7 +430,7 @@ export default Dashboard;</code></pre>
         </div>
     </section>
 
-    <!-- roadmap-->
+    <!-- Roadmap Section -->
     <section class="roadmap">
         <div class="container">
             <div class="section-title">
@@ -527,7 +504,7 @@ export default Dashboard;</code></pre>
         </div>
     </section>
 
-    <!-- reviews-->
+    <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-title">
@@ -606,7 +583,7 @@ export default Dashboard;</code></pre>
         </div>
     </section>
 
-    <!-- pricing -->
+    <!-- Pricing Section -->
     <section id="pricing" class="pricing">
         <div class="container">
             <div class="section-title">
@@ -640,7 +617,7 @@ export default Dashboard;</code></pre>
                         <li><i class="fas fa-times"></i> Priority Support</li>
                         <li><i class="fas fa-times"></i> Custom Integrations</li>
                     </ul>
-                    <a href="{% url 'register' %}" class="btn btn-primary">Get Started</a>
+                    <a href="#" class="btn btn-primary">Get Started</a>
                 </div>
                 <div class="pricing-card glass-card popular">
                     <div class="popular-badge">Most Popular</div>
@@ -663,7 +640,7 @@ export default Dashboard;</code></pre>
                         <li><i class="fas fa-times"></i> Priority Support</li>
                         <li><i class="fas fa-times"></i> Custom Integrations</li>
                     </ul>
-                    <a href="{% url 'register' %}" class="btn btn-primary">Get Started</a>
+                    <a href="#" class="btn btn-primary">Get Started</a>
                 </div>
                 <div class="pricing-card glass-card">
                     <div class="pricing-save">Save 30%</div>
@@ -685,11 +662,11 @@ export default Dashboard;</code></pre>
                         <li><i class="fas fa-check"></i> Priority Support</li>
                         <li><i class="fas fa-check"></i> Custom Integrations</li>
                     </ul>
-                    <a href="{% url 'register' %}" class="btn btn-primary">Get Started</a>
+                    <a href="#" class="btn btn-primary">Get Started</a>
                 </div>
             </div>
 
-            <!-- plans table -->
+            <!-- Comparison Table -->
             <div class="comparison">
                 <div class="section-title">
                     <h2>Feature Comparison</h2>
@@ -761,7 +738,7 @@ export default Dashboard;</code></pre>
 
   
 
-    <!-- integrations -->
+    <!-- Integrations Section -->
     <section class="integrations">
         <div class="container">
             <div class="section-title">
@@ -808,7 +785,7 @@ export default Dashboard;</code></pre>
         </div>
     </section>
 
-    <!-- pricing calculator -->
+    <!-- Pricing Calculator Section -->
     <section class="pricing-calculator">
         <div class="container">
             <div class="section-title">
@@ -886,7 +863,7 @@ export default Dashboard;</code></pre>
         </div>
     </section>
 
-    <!-- cta -->
+    <!-- CTA Section -->
     <section class="cta">
         <div class="cta-bg"></div>
         <div class="cta-shape"></div>
@@ -896,7 +873,7 @@ export default Dashboard;</code></pre>
                 <h2>Ready to Transform Your Development Process?</h2>
                 <p>Join thousands of developers who are building better software faster with Codeweave's AI-powered platform.</p>
                 <div class="cta-buttons">
-                    <a href="{% url 'register' %}" class="btn btn-primary">
+                    <a href="#" class="btn btn-primary">
                         <i class="fas fa-rocket"></i>
                         Get Started Free
                     </a>
@@ -909,7 +886,7 @@ export default Dashboard;</code></pre>
         </div>
     </section>
 
-    <!-- newsletter -->
+    <!-- Newsletter Section -->
     <section id="newsletter" class="newsletter-section">
         <div class="container">
             <div class="newsletter glass-card">
@@ -925,7 +902,7 @@ export default Dashboard;</code></pre>
         </div>
     </section>
 
-    <!-- contact -->
+    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-title">
@@ -1004,7 +981,7 @@ export default Dashboard;</code></pre>
         </div>
     </section>
 
-    <!-- footer -->
+    <!-- Footer -->
     <footer>
         <div class="footer-bg"></div>
         <div class="container">
@@ -1064,58 +1041,8 @@ export default Dashboard;</code></pre>
         </div>
     </footer>
 
-    <!-- live chat widget -->
-    <div class="chat-widget">
-        <div class="chat-button">
-            <i class="fas fa-comments"></i>
-        </div>
-        <div class="chat-popup">
-            <div class="chat-header">
-                <h3>Chat with us</h3>
-                <div class="chat-close"><i class="fas fa-times"></i></div>
-            </div>
-            <div class="chat-messages">
-                <div class="chat-message bot">
-                    <div class="chat-avatar">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="chat-bubble">
-                        <p>Hi there! 👋 How can we help you today?</p>
-                    </div>
-                </div>
-                <div class="chat-message bot">
-                    <div class="chat-avatar">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="chat-bubble">
-                        <p>I can answer questions about Codeweave, help you choose the right plan, or connect you with our team.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="chat-input">
-                <input type="text" placeholder="Type your message...">
-                <button><i class="fas fa-paper-plane"></i></button>
-            </div>
-        </div>
-    </div>
-
-    <!-- cookie consent banner -->
-    <div class="cookie-banner">
-        <div class="cookie-content">
-            <div class="cookie-icon">
-                <i class="fas fa-cookie-bite"></i>
-            </div>
-            <div class="cookie-text">
-                <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
-            </div>
-            <div class="cookie-buttons">
-                <button class="btn btn-outline btn-sm cookie-settings">Cookie Settings</button>
-                <button class="btn btn-primary btn-sm cookie-accept">Accept All</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- back to top -->
+    
+    <!-- Back to Top Button -->
     <div class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </div>

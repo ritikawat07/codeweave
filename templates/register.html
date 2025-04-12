@@ -9,42 +9,17 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    <!-- header -->
+    <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="home.html" class="logo">
+            <a href="{% url 'index' %}" class="logo">
                 <i class="fas fa-brain logo-icon"></i>
                 Code<span>W</span>eave
             </a>
             <nav>
                 <div class="nav-links">
-                    <a href="login.html" class="nav-link">Sign In</a>
-                    <a href="home.html" class="btn btn-outline btn-sm">Back to Home</a>
-                    <div class="theme-toggle" id="theme-toggle">
-                        <i class="fas fa-moon"></i>
-                        <div class="theme-menu">
-                            <div class="theme-option active" data-theme="dark">
-                                <div class="theme-color dark"></div>
-                                <span>Dark Theme</span>
-                            </div>
-                            <div class="theme-option" data-theme="light">
-                                <div class="theme-color light"></div>
-                                <span>Light Theme</span>
-                            </div>
-                            <div class="theme-option" data-theme="ocean">
-                                <div class="theme-color ocean"></div>
-                                <span>Ocean Theme</span>
-                            </div>
-                            <div class="theme-option" data-theme="nature">
-                                <div class="theme-color nature"></div>
-                                <span>Nature Theme</span>
-                            </div>
-                            <div class="theme-option" data-theme="cosmic">
-                                <div class="theme-color cosmic"></div>
-                                <span>Cosmic Theme</span>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="{% url 'login' %}" class="nav-link">Sign In</a>
+                    <a href="{% url 'index' %}" class="btn btn-outline btn-sm">Back to Home</a>
                 </div>
                 <div class="hamburger">
                     <div class="line1"></div>
@@ -55,7 +30,7 @@
         </div>
     </header>
 
-    <!-- main -->
+    <!-- Main Content -->
     <main class="auth-main">
         <div class="auth-container">
             <div class="auth-card glass-card">
@@ -64,26 +39,48 @@
                     <p>Join Codeweave to start building with AI</p>
                 </div>
 
-                <form id="register-form" class="auth-form">
+                <form method="post" class="auth-form">
+                    {% csrf_token %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
                     <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        <label for="id_username">Username</label>
+                        <input type="text" name="username" id="id_username" required placeholder="Choose a username">
+                        {% if form.username.errors %}
+                            <div class="error-message">{{ form.username.errors }}</div>
+                        {% endif %}
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="name@example.com" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Password</label>
+                        <label for="id_password1">Password</label>
                         <div class="password-input">
-                            <input type="password" id="password" name="password" placeholder="••••••••" required>
+                            <input type="password" name="password1" id="id_password1" required placeholder="••••••••">
                             <button type="button" class="password-toggle">
                                 <i class="fas fa-eye-slash"></i>
                             </button>
                         </div>
-                        <p class="password-hint">Password must be at least 8 characters long</p>
+                        {% if form.password1.errors %}
+                            <div class="error-message">{{ form.password1.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_password2">Confirm Password</label>
+                        <div class="password-input">
+                            <input type="password" name="password2" id="id_password2" required placeholder="••••••••">
+                            <button type="button" class="password-toggle">
+                                <i class="fas fa-eye-slash"></i>
+                            </button>
+                        </div>
+                        {% if form.password2.errors %}
+                            <div class="error-message">{{ form.password2.errors }}</div>
+                        {% endif %}
                     </div>
 
                     <div class="form-group checkbox-group">
@@ -109,16 +106,16 @@
                     </div>
 
                     <div class="auth-footer">
-                        <p>Already have an account? <a href="login.html">Sign in</a></p>
+                        <p>Already have an account? <a href="{% url 'login' %}">Sign in</a></p>
                     </div>
                 </form>
             </div>
         </div>
     </main>
 
-    <!-- background -->
+    <!-- Particles Background -->
     <div class="particles" id="particles"></div>
 
-    <script src="./script.js"></script>
+    <script src="{% static 'script.js' %}"></script>
 </body>
 </html>

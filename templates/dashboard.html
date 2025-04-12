@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevHub Dashboard</title>
+    {% load static %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2 class="sidebar-logo">DevHub</h2>
+                <div class="sidebar-user">
+                    <div class="user-avatar">{{ request.user.username|slice:':2'|upper }}</div>
+                    <span class="user-name">{{ request.user.username|truncatechars:20 }}</span>
+                </div>
+                <button class="sidebar-toggle" onclick="toggleSidebar()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="{% url 'app' %}" class="nav-item">
+                    <i class="fas fa-plus"></i>
+                    <span>Create New Project</span>
+                </a>
+                <a href="{% url 'dashboard' %}" class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Projects</span>
+                    <span class="badge">12</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span>Team</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="quick-actions">
+                <div class="quick-actions-header">
+                    <h3 class="quick-actions-title">Quick Actions</h3>
+                </div>
+                <div class="quick-actions-list">
+                    <div class="quick-action">
+                        <div class="quick-action-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="quick-action-text">View Reports</div>
+                        <span class="quick-action-badge">Updated</span>
+                    </div>
+                    <div class="quick-action">
+                        <div class="quick-action-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="quick-action-text">Analytics</div>
+                        <span class="quick-action-badge">New</span>
+                    </div>
+                    <div class="quick-action">
+                        <div class="quick-action-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="quick-action-text">Team</div>
+                        <span class="quick-action-badge">4 Members</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-stats">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div>
+                        <div class="stat-value">24</div>
+                        <div class="stat-label">Active Tasks</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div>
+                        <div class="stat-value">8</div>
+                        <div class="stat-label">Team Members</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <div class="stat-value">45</div>
+                        <div class="stat-label">Hours Tracked</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar">{{ request.user.username|slice:':2'|upper }}</div>
+                    <div class="user-info">
+                        <span class="user-name">{{ request.user.username|truncatechars:20 }}</span>
+                        <span class="user-role">Admin</span>
+                    </div>
+                </div>
+                <div class="user-actions">
+                    <button class="user-settings" onclick="toggleUserMenu(this)">
+                        <i class="fas fa-cog settings-icon"></i>
+                    </button>
+                </div>
+
+                <div class="special-section">
+                    <div class="section-header">
+                        <h3 class="section-title">Quick Stats</h3>
+                        <span class="section-subtitle">Today's Overview</span>
+                    </div>
+
+                    <div class="quick-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <div class="stat-value">12</div>
+                            <div class="stat-label">Tasks</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-value">4</div>
+                            <div class="stat-label">Team</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-value">3.5</div>
+                            <div class="stat-label">Hours</div>
+                        </div>
+                    </div>
+
+                    <div class="progress-section">
+                        <div class="progress-label">Daily Progress</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-title">Quick Start</div>
+                            <div class="feature-description">Get started with our quick start guide</div>
+                        </div>
+                        <span class="feature-badge">New</span>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-title">Analytics</div>
+                            <div class="feature-description">View your team's performance</div>
+                        </div>
+                        <span class="feature-badge">Updated</span>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-title">Support</div>
+                            <div class="feature-description">Get help from our support team</div>
+                        </div>
+                        <span class="feature-badge">24/7</span>
+                    </div>
+                </div>
+
+                <div class="user-menu" id="userMenu">
+                    <a href="#" class="menu-item">
+                        <div class="menu-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="menu-text">Profile</div>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <div class="menu-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div class="menu-text">Settings</div>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <div class="menu-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="menu-text">Notifications</div>
+                        <span class="menu-badge">3</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <div class="menu-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="menu-text">Help Center</div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <div class="header">
+                <h1 class="header-title">Dashboard</h1>
+                <div class="header-actions">
+                    <button class="action-btn" onclick="toggleSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <button class="action-btn" onclick="refreshDashboard()">
+                        <i class="fas fa-sync"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div class="projects-section">
+                <div class="projects-header">
+                    <h2 class="projects-title">Projects</h2>
+                    <span class="projects-count">Total Projects: {{ projects|length }}</span>
+                    <button class="view-all-btn">
+                        View All
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            
+                {% if projects %}
+                    <div class="projects-grid">
+                        {% for project in projects %}
+                            <div class="project-card">
+                                <div class="project-card-header">
+                                    <h3 class="project-card-title">{{ project.name }}</h3>
+                                    <span class="project-card-status">Active</span>
+                                </div>
+                                <div class="project-card-meta">
+                                    <div class="project-card-meta-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>{{ project.created_at|date:"M d, Y" }}</span>
+                                    </div>
+                                    <div class="project-card-meta-item">
+                                        <i class="fas fa-user"></i>
+                                        <span>{{ request.user.username }}</span>
+                                    </div>
+                                </div>
+                                <div class="project-card-actions">
+                                    <a href="{% url 'projects_1:dev_environment' project.id %}" class="project-card-action-btn">
+                                        <i class="fas fa-eye"></i> View
+                                    </a>
+                                    <a href="{% url 'projects_1:dev_environment' project.id %}" class="project-card-action-btn">
+                                        <i class="fas fa-edit"></i> Edit
+                                    </a>
+                                    <button class="delete-project-btn" onclick="deleteProject('{{ project.id }}')">
+                                        <i class="fas fa-trash"></i>
+                                        Delete Project
+                                        <div class="spinner"></div>
+                                    </button>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="empty-state">
+                        <i class="fas fa-folder-open empty-state-icon"></i>
+                        <h3 class="empty-state-title">No Projects Yet</h3>
+                        <p class="empty-state-message">Start a new project to get things rolling!</p>
+                        <a href="{% url 'app' %}" style="text-decoration: none;">
+                            <button class="create-project-btn">
+                                <i class="fas fa-plus"></i> Create Project
+                            </button>
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+    <script src="{% static 'dashboard.js' %}"></script>
+</body>
+</html>

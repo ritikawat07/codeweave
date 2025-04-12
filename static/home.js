@@ -7,8 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
     initThemeSwitcher();
     initMobileNavigation();
-    initSmoothScrolling();
     createParticles();
+    initPasswordToggles();
+    initFormValidation();
+    initScrollAnimations();
     initTimelineAnimation();
     initTestimonialSlider();
     initPricingToggle();
@@ -19,101 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initCookieConsent();
     initBackToTop();
 });
-
-/**
- * Theme Switcher Functionality
- * Handles theme selection and persistence
- */
-function initThemeSwitcher() {
-    // Set default theme
-    const defaultTheme = 'dark';
-    document.documentElement.setAttribute('data-theme', defaultTheme);
-    
-    // Theme toggle functionality
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeOptions = document.querySelectorAll('.theme-option');
-    const themeIcon = themeToggle.querySelector('i');
-    
-    // Toggle theme menu
-    themeToggle.addEventListener('click', function(e) {
-        e.stopPropagation(); // Prevent click from bubbling up
-        themeToggle.classList.toggle('active');
-    });
-    
-    // Close theme menu when clicking outside
-    document.addEventListener('click', function() {
-        if (themeToggle.classList.contains('active')) {
-            themeToggle.classList.remove('active');
-        }
-    });
-    
-    // Theme selection
-    themeOptions.forEach(option => {
-        option.addEventListener('click', function(e) {
-            e.stopPropagation(); // Prevent click from closing the menu
-            const theme = this.getAttribute('data-theme');
-            document.documentElement.setAttribute('data-theme', theme);
-            
-            // Update active state
-            themeOptions.forEach(opt => opt.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Update icon
-            updateThemeIcon(theme);
-            
-            // Close menu
-            themeToggle.classList.remove('active');
-            
-            // Save theme preference
-            localStorage.setItem('theme', theme);
-        });
-    });
-    
-    // Load saved theme preference
-    const savedTheme = localStorage.getItem('theme') || defaultTheme;
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    
-    // Update active state based on saved theme
-    themeOptions.forEach(option => {
-        if (option.getAttribute('data-theme') === savedTheme) {
-            option.classList.add('active');
-        } else {
-            option.classList.remove('active');
-        }
-    });
-    
-    // Update icon based on saved theme
-    updateThemeIcon(savedTheme);
-}
-
-/**
- * Updates the theme icon based on the selected theme
- * @param {string} theme - The current theme name
- */
-function updateThemeIcon(theme) {
-    const themeIcon = document.querySelector('#theme-toggle i');
-    themeIcon.className = 'fas';
-    
-    switch(theme) {
-        case 'light':
-            themeIcon.classList.add('fa-sun');
-            break;
-        case 'dark':
-            themeIcon.classList.add('fa-moon');
-            break;
-        case 'ocean':
-            themeIcon.classList.add('fa-water');
-            break;
-        case 'nature':
-            themeIcon.classList.add('fa-tree');
-            break;
-        case 'cosmic':
-            themeIcon.classList.add('fa-star');
-            break;
-        default:
-            themeIcon.classList.add('fa-moon');
-    }
-}
 
 /**
  * Mobile Navigation
@@ -779,6 +686,72 @@ function initBackToTop() {
         });
     });
 }
+
+/**
+ * Initialize scroll animations
+ */
+function initScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    // Observe all elements with animate-on-scroll class
+    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+        observer.observe(el);
+    });
+
+    // Add scroll animations to specific sections
+    document.querySelectorAll('.how-it-works-item').forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.2}s`;
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
+// Add scroll progress indicator
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const progress = (scrollPosition / (documentHeight - windowHeight)) * 100;
+    
+    // Update progress indicator if you have one
+    const progressIndicator = document.querySelector('.scroll-progress');
+    if (progressIndicator) {
+        progressIndicator.style.width = progress + '%';
+    }
+});
+
+// Add parallax effect to background elements
+window.addEventListener('scroll', function() {
+    const parallaxElements = document.querySelectorAll('.parallax');
+    parallaxElements.forEach(element => {
+        const speed = element.dataset.speed || 0.5;
+        const scrolled = window.pageYOffset;
+        const yPos = -(scrolled * speed);
+        element.style.transform = `translateY(${yPos}px)`;
+    });
+});
 
 /**
  * Utility function to escape HTML special characters

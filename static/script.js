@@ -7,74 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initFormValidation()
   })
   
-  /**
-   * Theme Switcher Functionality
-   * Handles theme selection and persistence
-   */
-  function initThemeSwitcher() {
-    // Set default theme
-    const defaultTheme = "dark"
-    const savedTheme = localStorage.getItem("theme") || defaultTheme
-    document.documentElement.setAttribute("data-theme", savedTheme)
-  
-    // Theme toggle functionality
-    const themeToggle = document.getElementById("theme-toggle")
-  
-    // Check if theme toggle exists before proceeding
-    if (!themeToggle) {
-      console.error("Theme toggle element not found")
-      return
-    }
-  
-    const themeOptions = document.querySelectorAll(".theme-option")
-  
-    // Update active state based on saved theme
-    themeOptions.forEach((option) => {
-      if (option.getAttribute("data-theme") === savedTheme) {
-        option.classList.add("active")
-      } else {
-        option.classList.remove("active")
-      }
-    })
-  
-    // Update icon based on saved theme
-    updateThemeIcon(savedTheme)
-  
-    // Toggle theme menu
-    themeToggle.addEventListener("click", (e) => {
-      e.stopPropagation()
-      themeToggle.classList.toggle("active")
-    })
-  
-    // Close theme menu when clicking outside
-    document.addEventListener("click", (event) => {
-      if (!themeToggle.contains(event.target)) {
-        themeToggle.classList.remove("active")
-      }
-    })
-  
-    // Theme selection
-    themeOptions.forEach((option) => {
-      option.addEventListener("click", function () {
-        const theme = this.getAttribute("data-theme")
-        document.documentElement.setAttribute("data-theme", theme)
-  
-        // Update active state
-        themeOptions.forEach((opt) => opt.classList.remove("active"))
-        this.classList.add("active")
-  
-        // Update icon
-        updateThemeIcon(theme)
-  
-        // Close menu
-        themeToggle.classList.remove("active")
-  
-        // Save theme preference
-        localStorage.setItem("theme", theme)
-      })
-    })
-  }
-  
+ 
   /**
    * Updates the theme icon based on the selected theme
    * @param {string} theme - The current theme name
