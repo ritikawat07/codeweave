@@ -1031,28 +1031,22 @@ footer {
                     // Prepare the request payload
                     const payload = {
                         content: content,
-                        title: window.roadmapData.project_overview.name || 'Project Roadmap',
-                        options: {
-                            format: 'A4',
-                            margin: '20mm',
-                            printBackground: true
-                        }
+                        title: window.roadmapData.project_overview.name || 'Project Roadmap'
                     };
 
-                    // Use a different CORS proxy
-                    const proxyUrl = 'https://api.allorigins.win/raw?url=';
-                    const targetUrl = encodeURIComponent('https://api.market/store/yakpdf/pdf');
-                    
-                    const response = await fetch(proxyUrl + targetUrl, {
+                    // Make the request to our Django endpoint
+                    const response = await fetch('/generate-pdf/', {
                         method: 'POST',
                         headers: {
-                            'Content-Type': 'application/json'
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': getCookie('csrftoken')
                         },
                         body: JSON.stringify(payload)
                     });
 
                     if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
+                        const errorData = await response.json();
+                        throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
                     }
 
                     // Get the PDF blob
@@ -1078,6 +1072,22 @@ footer {
                     exportButton.disabled = false;
                 }
             });
+
+            // Helper function to get CSRF token
+            function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i].trim();
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
         });
         
         // toggle phase expansion
